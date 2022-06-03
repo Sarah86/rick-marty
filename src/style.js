@@ -2,6 +2,7 @@ export const styles = (props) => {
   return {
     container: {
       height: "100%",
+      padding: 30,
     },
     header: {
       textAlign: "center",
@@ -11,7 +12,7 @@ export const styles = (props) => {
       display: "flex",
       flexWrap: "wrap",
       flex: "1 1 100%",
-      justifyContent: 'center',
+      margin: 5
     },
     character: {
       display: "flex",
@@ -19,20 +20,31 @@ export const styles = (props) => {
       paddingBottom: 10,
       margin: 5,
       maxWidth: 150,
-      width: '100%'
+      width: "100%",
     },
     charactersContainer: {
       display: "flex",
+      minHeight: 500,
+      marginTop: 50
     },
     thumbnailContainer: {
       position: "relative",
       marginBottom: 10,
     },
     thumbnail: {
-      width: '100%',
+      width: "100%",
     },
     favorites: {
-      flex: "1 3 100%",
+      flex: "1 1 100%",
+      textAlign: "center",
+      margin: 5
+    },
+    h2: {
+      marginTop: 0,
+      marginBotom: 20
+    },
+    list: {
+      listStyleType: 'none', 
     },
     star: {
       position: "absolute",
@@ -41,7 +53,10 @@ export const styles = (props) => {
       width: 30,
     },
     starPicture: {
-      fill: props?.isFavorite ? 'orange' : 'grey'
+      fill: props?.isFavorite ? "orange" : "grey",
+    },
+    page: {
+      marginRight: 5
     }
   };
 };

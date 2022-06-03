@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render <App/> correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: auto;"
+  >
+    <div>
+      <div
+        style="height: 100%; padding: 30px;"
+      >
+        <div
+          style="display: none; position: absolute; z-index: 3; height: 100vh; flex-direction: column; justify-content: center; align-items: center; top: 0px; right: 0px; bottom: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.5); overflow: hidden;"
+        >
+          <div
+            style="position: relative; display: none; background-color: rgb(255, 255, 255);"
+          >
+            <button
+              style="position: absolute; right: 0px; margin: 10px;"
+            >
+              X
+            </button>
+            <div>
+              <img
+                style="width: 100%; object-fit: cover; height: 150px;"
+              />
+              <div
+                style="overflow-y: auto; height: 100%; max-height: 250px; padding: 20px; margin: 0px;"
+              >
+                <ul
+                  style="padding-bottom: 20px;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="text-align: center; padding: 1em;"
+        >
+          <h1>
+            Rick and Morty
+          </h1>
+          <input
+            name="search"
+            placeholder="Search a character"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          style="display: flex; min-height: 500px; margin-top: 50px;"
+        >
+          <div
+            style="display: flex; flex-wrap: wrap; flex: 1 1 100%; margin: 5px;"
+          />
+          <div
+            style="flex: 1 1 100%; text-align: center; margin: 5px;"
+          >
+            <h2
+              style="margin-top: 0px;"
+            >
+              Favorite Characters
+            </h2>
+            <ul
+              style="list-style-type: none;"
+            />
+          </div>
+        </div>
+        <div />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      style="height: 100%; padding: 30px;"
+    >
+      <div
+        style="display: none; position: absolute; z-index: 3; height: 100vh; flex-direction: column; justify-content: center; align-items: center; top: 0px; right: 0px; bottom: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.5); overflow: hidden;"
+      >
+        <div
+          style="position: relative; display: none; background-color: rgb(255, 255, 255);"
+        >
+          <button
+            style="position: absolute; right: 0px; margin: 10px;"
+          >
+            X
+          </button>
+          <div>
+            <img
+              style="width: 100%; object-fit: cover; height: 150px;"
+            />
+            <div
+              style="overflow-y: auto; height: 100%; max-height: 250px; padding: 20px; margin: 0px;"
+            >
+              <ul
+                style="padding-bottom: 20px;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="text-align: center; padding: 1em;"
+      >
+        <h1>
+          Rick and Morty
+        </h1>
+        <input
+          name="search"
+          placeholder="Search a character"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        style="display: flex; min-height: 500px; margin-top: 50px;"
+      >
+        <div
+          style="display: flex; flex-wrap: wrap; flex: 1 1 100%; margin: 5px;"
+        />
+        <div
+          style="flex: 1 1 100%; text-align: center; margin: 5px;"
+        >
+          <h2
+            style="margin-top: 0px;"
+          >
+            Favorite Characters
+          </h2>
+          <ul
+            style="list-style-type: none;"
+          />
+        </div>
+      </div>
+      <div />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

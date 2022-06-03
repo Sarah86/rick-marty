@@ -6,6 +6,10 @@ import { styles } from "./style";
 
 const stylesheet = styles();
 
+function paginate(array, page_size, page_number) {
+  return array.slice((page_number - 1) * page_size, page_number * page_size);
+}
+
 function App() {
   const [state, setState] = useState({
     status: "idle",
@@ -26,14 +30,20 @@ function App() {
     value: "",
   });
   const [favorites, setFavorites] = useState([]);
+  const [pageControlled, setPageControlled] = useState([]);
+  const [pages, setPages] = useState({
+    pages: [1, 2, 3],
+    number: 0,
+  });
+  const charactersByPage = 6;
 
   const modalIsOpen = modal.status === "open";
   const results = state.data.filteredResults || state.data.results;
   const isCurrentTarget = (e) => e.target === e.currentTarget;
 
-  const favoriteExists = (character) =>  favorites.find(favorite => favorite.name === character.name)
+  const favoriteExists = (character) =>
+    favorites.find((favorite) => favorite.name === character.name);
   const onClick = ({ character, event }) => {
-    console.log(event.target, event.currentTarget);
     if (!isCurrentTarget(event)) return null;
     setModal({
       status: "open",
@@ -64,13 +74,18 @@ function App() {
   };
 
   const handleFavoriteClick = ({ character, event }) => {
-    console.log(event.target);
     event.stopPropagation();
-    if (favoriteExists(character)){
-      setFavorites(prev => prev.filter(favorite => favorite.name !== character.name))
+    if (favoriteExists(character)) {
+      setFavorites((prev) =>
+        prev.filter((favorite) => favorite.name !== character.name)
+      );
     } else {
       setFavorites((prev) => [...prev, character]);
     }
+  };
+
+  const handlePageClick = (page) => {
+    setPageControlled(paginate(results, charactersByPage, page));
   };
 
   useEffect(() => {
@@ -98,8 +113,14 @@ function App() {
   }, [bodyScroll.status]);
 
   useEffect(() => {
-    console.log(state);
-  }, [state]);
+    const pageNumbers = Math.ceil(results?.length / charactersByPage);
+    const pages = [...Array(pageNumbers)].map((_, i) => i + 1);
+    setPageControlled(paginate(results, charactersByPage, 1));
+    setPages((prev) => ({
+      pages,
+      number: pageNumbers,
+    }));
+  }, [results]);
 
   useEffect(() => {
     const filteredResults = state.data.results.filter((result) =>
@@ -133,9 +154,9 @@ function App() {
       </div>
       <div style={stylesheet.charactersContainer}>
         <div style={stylesheet.characters}>
-          {results.map((character) => {
+          {pageControlled.map((character) => {
             const { name, image, id } = character;
-            const isFavorite = favoriteExists(character)
+            const isFavorite = favoriteExists(character);
             return (
               <div key={id} style={stylesheet.character}>
                 <div style={stylesheet.thumbnailContainer}>
@@ -151,7 +172,7 @@ function App() {
                       handleFavoriteClick({ character, event })
                     }
                   >
-                    <Star style={styles({ isFavorite }).starPicture}/>
+                    <Star style={styles({ isFavorite }).starPicture} />
                   </button>
                 </div>
                 <span>{name}</span>
@@ -160,11 +181,18 @@ function App() {
           })}
         </div>
         <div style={stylesheet.favorites}>
-          <h2>Favorite Characters</h2>
-          <ul>
-            {favorites.map(character => <li>{character.name}</li>)}
+          <h2 style={stylesheet.h2}>Favorite Characters</h2>
+          <ul style={stylesheet.list}>
+            {favorites.map((character) => (
+              <li>{character.name}</li>
+            ))}
           </ul>
         </div>
+      </div>
+      <div>
+        {pages.pages.map((page) => (
+          <button onClick={() => handlePageClick(page)} style={stylesheet.page} key={page}>{page}</button>
+        ))}
       </div>
     </div>
   );
